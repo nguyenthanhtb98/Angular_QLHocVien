@@ -1,0 +1,9 @@
+<div>
+    <input type="text" [(ngModel)]="student.name"/><br/>
+    <input type="text" [(ngModel)]="student.sex"/><br/>
+    <input type="date" [(ngModel)]="student.birthday"/><br/>
+    <input type="text" [(ngModel)]="student.address"/><br/>
+    <button (click) = "editStudent(student)">OK</button> 
+    <a routerLink = "/students">Back</a>
+</div>
+

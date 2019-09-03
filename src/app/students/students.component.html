@@ -1,0 +1,21 @@
+<h2>Danh sách học viên</h2>
+<div>
+    <input type = "text" placeholder="Enter ID" [(ngModel)] = "id"/>
+    <input type = "text" placeholder="Enter Name" [(ngModel)] = "name"/>
+    <input type = "text" placeholder="Enter Sex" [(ngModel)] = "sex"/>
+    <input type = "date" placeholder="Enter Birthday" [(ngModel)] = "birthday"/>
+    <input type = "text" placeholder="Enter Address" [(ngModel)] = "address"/>
+    <button (click) = "addStudent()">Add</button>
+    
+</div>
+<div *ngFor="let item of students">
+    <ul>
+        <li>{{item.id}}</li>
+        <li>{{item.name}}</li>
+        <li>{{item.sex}}</li>
+        <li>{{ item.birthday | date:shortDate }}</li>
+        <li>{{item.address}}</li>
+        <a [routerLink]="'/student/' + item.id">Edit</a>
+        <button (click)="removeStudent(item.id);">Delete</button>     
+    </ul>
+</div>
